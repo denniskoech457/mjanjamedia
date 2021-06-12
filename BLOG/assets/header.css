@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+  }
+  
+  
+  header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    background-color: rgb(202, 27, 62);
+    
+  }
+  
+  header .logo{
+    font-size: 1.3em;
+    font-weight: 900;
+    
+    
+    text-decoration: none;
+    cursor: pointer;
+    color: #00ffe5;
+    transition: 1s ease;
+  }
+  header .logo span{
+    color: rgb(212, 40, 10);
+    transition: 1s ease;
+  
+  }
+  header .logo:hover{
+    filter: invert(1);
+    color: rgb(212, 40, 10);
+  }
+  header .navigation{
+    position: relative;
+    z-index: 1;
+  }
+  header .navigation .navigation-items  a{
+    position: relative;
+    font-size: 1em;
+    font-weight: 500;
+    color: aliceblue;
+    text-decoration: none;
+    
+    margin-left: 20px;
+    transition: 0.5s ease;
+  }
+  header .navigation .navigation-items a::before{
+    content: ' ';
+    position: absolute;
+    background: rgb(4, 39, 85);
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s  ease;
+  }
+  header .navigation .navigation-items a:hover:before{
+    width: 100%;
+  }
+  header .navigation .navigation-items a:hover{
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 500;
+    color:#07031b;
+    text-decoration: none;
+  }
+  
+  .textBox span{
+    position: absolute;
+    background: #009688;
+    width: 0;
+    height: 100%;
+    bottom: 0;
+    z-index:-1;
+    transition: 1.2s;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 40px;
+  }
+  
+  .textBox a:hover span{
+    width: 100%;
+    
+  }
+  
+  @media (max-width: 815px){
+  
+    header{
+              padding: 12px 20px;
+              
+    }
+    section{
+              padding: 100px 20px;
+    }
+  
+    header .navigation{
+          display: none;
+          
+    }
+    header .navigation.active{
+              position: fixed;
+              width: 100%;
+              height: 100vh;
+              top: 0;
+              left: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background:rgba(5, 5, 10, .8);
+    }
+    header .navigation .navigation-items a{
+              color: aliceblue;
+              font-size: 1em;
+              margin: 20px;
+              transition: 1s ease-in-out;
+              
+    }
+    header .navigation .navigation-items a:hover{
+              letter-spacing: 2px;
+              transition:  1s ease-in-out;
+  
+    }
+    header .navigation .navigation-items a::before{
+              background: #222;
+              height: 5px;
+              transition: 1s ease-in-out;
+    }
+    header .navigation.active .navigation-items{
+          background: rgba(30, 71, 192, 0.6);
+          width: 100%;
+          max-width: 100%;
+          margin: 0;
+          padding:200% 4px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border-radius: 5px;
+          box-shadow: 0 5px 25px rgb(1 1 1/20%) ;
+          transition: 1s ease;
+    }
+    .textBox{
+              margin-left: 0;
+              width: 85%;
+    }
+  
+     .open{
+               width: 20px;
+               cursor: pointer;
+              filter: invert(1);
+              height: 20px;
+              background: url(img.png)no-repeat;
+              background-size: 20px;
+              background-position: center;
+              transition: .5s ease;
+     }
+     .open.active{
+               z-index: 999;
+               background: url(ex.png)no-repeat;
+               
+               background-size: 20px;
+               background-position: center;
+               transition: .5s ease;
+     }
+  
+  }
+  @keyframes navLinkFade{
+    from{
+              opacity: 0;
+              transform: translateX(50px);
+    }
+    to{
+              opacity: 1;
+              transform: translateX(0px);
+    }
+  }
+  
+    .aboutpage{
+      margin: auto;
+      margin-top: 90px;
+    margin-bottom: 90px;
+    padding: 40px;
+      
+    }
+    .aboutpage h1{
+      text-align: center;
+    }

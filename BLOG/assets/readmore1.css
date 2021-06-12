@@ -1,0 +1,47 @@
+.image{
+    
+    padding: 8px;
+    background-color: #ece6e6;
+    display: flex;
+    flex-direction: column;
+   text-align: center;
+   margin-top: 80px;
+    
+  }
+  img{
+    
+    margin: 5px;
+    vertical-align: middle;
+    max-width: 300px;
+    max-height: 300px;
+}
+.readimage
+{
+   position: relative;
+   margin: auto;
+
+}
+.title{
+  text-align: center;
+}
+
+.icons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.logos{
+  margin: auto;
+}
+.bg{
+  margin: 5px;
+}
+
+.imagetext
+{
+  margin-top: 0;
+  margin-bottom: 1rem;
+  
+  overflow-wrap: break-word;
+}
