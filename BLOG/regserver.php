@@ -7,8 +7,7 @@ $email    = "";
 $errors = array(); 
 
 // connect to the database
-$db = mysqli_connect("sql302.epizy.com", "sql4416754epiz_28752414", "z64XcPjcQIer", "epiz_28752414_mjanjamedia");
-
+require('dbcon.php');
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
   // receive all input values from the form

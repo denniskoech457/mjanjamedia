@@ -60,8 +60,7 @@
                         <?php
 
                           
-                     $db = mysqli_connect("localhost", "root", "", "mjanjamedia")
-                        or die ('Cannot connect to db');
+              require('dbcon.php');
 
                             $result = $db->query("select  categoryname from categories");
 

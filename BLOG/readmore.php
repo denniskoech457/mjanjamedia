@@ -56,10 +56,10 @@ mysqli_query($db,) or die(mysqli_error($db));
    <p class="bg"><i class="fas fa-tags"></i> <b><?php echo $row['categoryname']; ?></b></p>
    </div>
    <div class="logos">
-      <a class="bg" href="http://www.facebook.com/sharer.php?u=https://localhost/MjanjaMedia/test/readmore.php?id=<?php echo $row['id']; ?>&text=<?php echo $row['title']; ?>>"><i class="fab fa-facebook fa-2x"></i></a>
-      <a class="bg" href="whatsapp://send?text=<?php echo $row['title']; ?> readmore.php?id=<?php echo $row['id']; ?>"><i class="fab fa-whatsapp fa-2x"></i></a>
+      <a class="bg" href="http://www.facebook.com/sharer.php?url=http://mjanja.medianewsonline.com/BLOG/readmore.php?id=<?php echo $row['id']; ?>&text=<?php echo $row['title']; ?>>"><i class="fab fa-facebook fa-2x"></i></a>
+      <a class="bg" href="whatsapp://send?text=<?php echo $row['title']; ?> &url=http://mjanja.medianewsonline.com/BLOG/readmore.php?id=<?php echo $row['id']; ?>"><i class="fab fa-whatsapp fa-2x"></i></a>
 
-      <a class="bg" href="http://twitter.com/share?text=<?php echo $row['title']; ?>&url=https://readmore.php?id=<?php echo $row['id']; ?>" ><i class="fab fa-twitter-square fa-2x"></i></a>
+      <a class="bg" href="http://twitter.com/share?text=<?php echo $row['title']; ?>&url=http://mjanja.medianewsonline.com/BLOG/readmore.php?id=<?php echo $row['id']; ?>" ><i class="fab fa-twitter-square fa-2x"></i></a>
    </div>
    
 
