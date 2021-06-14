@@ -63,22 +63,23 @@ $(document).ready(function(){
             $postID = $row['id'];
     ?>
    
-   <a  href="readmore.php?id=<?php echo $row['id']; ?>">  
-    <div class="card" style="width: 18rem; margin:7px;">
+   <a href="readmore.php?id=<?php echo $row['id']; ?>">  
+    <div class="card" style="width: 18rem; margin:7px; color: black; ">
      <img  class="card-img-top" src="<?php echo " ../images/".$row['image']." "; ?>" alt="Card image cap">
 
      <div class="card-body">
       <h2 class="title"  ><u><?php echo $row['title']; ?></u></h2>
-      <p class="bg"><i class="fas fa-tags"></i> <b><?php echo $row['categoryname']; ?></b></p>
+      <p class="bg"><i class="fas fa-tags"></i> <u><?php echo $row['categoryname']; ?></u></p>
+      <p class="bg"><i class="fas fa-calendar-alt"></i><u><?php echo substr($row['time'],0,10); ?></u></p> 
      </div>
     </div>
   </a>
-
+  
 
 
     <?php } ?>
  </div>
-    <div class="btn btn-outline-dark" id="show_more_main<?php echo $postID; ?>">
+    <div id="show_more_main<?php echo $postID; ?>">
         <span id="<?php echo $postID; ?>" class="show_more" title="Load more posts">+ more</span>
         <span class="loding" style="display: none;"><span class="loding_txt">Loading...</span></span>
     </div>

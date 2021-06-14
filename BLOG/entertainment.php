@@ -60,10 +60,11 @@ $(document).ready(function(){
    
    <a  href="readmore.php?id=<?php echo $row['id']; ?>">  
     <div class="card" style="width: 18rem; margin:7px;">
-     <img  class="card-img-top" src="<?php echo " ../images/".$row['image']." "; ?>" alt="Card image cap">
+     <img  class="card-img-top" src="<?php echo " ../images/".$row['image']." "; ?>" alt="<?php echo $row['title']; ?>">
 
      <div class="card-body">
       <h2 class="title"  ><u><?php echo $row['title']; ?></u></h2>
+      <p class="bg"><i class="fas fa-calendar-alt"></i><u><?php echo substr($row['time'],0,10); ?></u></p> 
       
     </div>
    </div>

@@ -37,11 +37,11 @@ while($data = mysqli_fetch_array($records))
   
   <a class="logo" ><?php echo $data['web_name']; ?></a>
   <div class="header-right">
-    <a class="active"class="btn btn-outline-dark" href="blog.php">Home</a>
-    <a href="">Entertainment</a>
-    <a href="">politics</a>
+    <a class="active"class="btn btn-outline-dark" href="../BLOG">Home</a>
+    <a href="../BLOG/entertainment.php">Entertainment</a>
+    <a href="../BLOG/politics.php">politics</a>
     <a href="#contact">Ispiration</a>
-    <a href="aboutus.php">About</a>
+    <a href="../BLOG/aboutus.php">About</a>
   </div>
   <?php
  }

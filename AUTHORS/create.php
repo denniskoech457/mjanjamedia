@@ -60,10 +60,10 @@
                         <?php
 
                           
-                            $conn = mysqli_connect("sql302.epizy.com", "epiz_28752414", "z64XcPjcQIer", "epiz_28752414_mjanjamedia")
+                     $db = mysqli_connect("localhost", "root", "", "mjanjamedia")
                         or die ('Cannot connect to db');
 
-                            $result = $conn->query("select  categoryname from categories");
+                            $result = $db->query("select  categoryname from categories");
 
                             
                             echo "<select name='categoryname'>";

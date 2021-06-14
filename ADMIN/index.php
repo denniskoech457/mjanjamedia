@@ -27,7 +27,7 @@
 <link rel="stylesheet"  href="assets/mjanja.css">
 
 </head>
-<body>
+
 <?php
    
    include "assets/header2.php"
@@ -55,45 +55,72 @@
 <a class="btn btn-dark" href="editweb.php?id=1">Website information</a>
 
 
-<div id="content">
 
+   <form action="" method="post">
+   <label for="title">search by title</label>
+   <input name="searchtitle" type="text"><br>
+   <label for="author">search by author</label>
+   <input name="searchauthor" type="text"><br>
+   
+   <button  class="btn btn-primary" name="search" type="submit">search</button>
 
- 
- <table class="table" border="2">
-  <tr>
+   
+   </form>
+ <div class="row">
+ <table class="table" border="2" >
     
-    <td>image</td>
-    <td>title</td>
-    <td>content</td>
-    <td>edit</td>
-    <td>Delete</td>
-  </tr>
+          <tbody>
+          <?php 
+          include("servers.php");
+          if (isset($_POST['search'])) {
+            // receive all input values from the form
+            
+            $searchauthor = ( $_POST['searchauthor']);
+            $searchtitle = ( $_POST['searchtitle']);
+          if ($searchauthor |= "" or $searchtitle |= "") {
+              $query = "SELECT *FROM images WHERE  author='$searchauthor' || title='$searchtitle'  ";
+            
+            $data = mysqli_query($db, $query) or die('error') ;
 
-<?php
+            if (mysqli_num_rows($data) > 0) {
+              while($row = mysqli_fetch_assoc($data)){
+              $id = $row['id'];
+              $image = $row['image'];
+              $title = $row['title'];
+              $image_text = $row['image_text'];
+              $author = $row['author'];
+              $categoryname = $row['categoryname'];
+              ?>
+            
+            <div class="card" style="width: 18rem; margin:7px;  ">
+                <img  class="card-img-top" src="<?php echo " ../images/$image "; ?>" alt="Card image cap">
+                <div class="card-body">
+                  <h2 class="title"  ><u><?php echo $title; ?></u></h2>
+                  <p class="bg"><i class="fas fa-tags"></i> <b><?php echo $categoryname; ?></b></p>
+                  <p class=""  ><u><?php echo $author; ?></u></p>
+                  <a class="btn btn-primary" href="editpost.php?id=<?php echo $id; ?>">edit</a></td> 
+                  <a class="btn btn-danger" href="deletepost.php?id=<?php echo $id; ?>">Delete</a></td>
+                </div>
+                      
+                      
+                    </div>	
+                    <?php 
+                  }
+                }
+              else{
+                ?>
+              <tr>
+              <td>Records Not Found!</td>
+              </tr>
+              <?php
+                }
 
-include "servers.php"; // Using database connection file here
-
-$records = mysqli_query($db, "select * from images"); // fetch data from database
-
-while($data = mysqli_fetch_array($records))
-{
-?>
-  <tr>
-    
-    <td><?php echo "<img src='/mjanjamedia/test/images/".$data['image']."' >"; ?></td>
-    <td><?php echo $data['title']; ?></td>
-    <td><?php echo $data['image_text']; ?></td> 
-    <td><a class="btn btn-primary" href="editpost.php?id=<?php echo $data['id']; ?>">edit</a></td> 
-    <td><a class="btn btn-danger" href="deletepost.php?id=<?php echo $data['id']; ?>">Delete</a></td>
-
-  </tr>	
-<?php
-}
-?>
+              }
+            }
+            
+          ?>
+          </tbody>
 </table>
-
-
-
 
 
 </div>
@@ -105,5 +132,5 @@ while($data = mysqli_fetch_array($records))
 ?>
 
 
-</body>
+
 </html>

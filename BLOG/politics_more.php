@@ -30,6 +30,7 @@ if(!empty($_POST["id"])){
 
   <div class="card-body">
     <h2  class="title"><u><?php echo $row['title']; ?></u></h2>
+    <p class="bg"><i class="fas fa-calendar-alt"></i><u><?php echo substr($row['time'],0,10); ?></u></p> 
     
   </div>
 </div>
@@ -38,7 +39,7 @@ if(!empty($_POST["id"])){
     <?php } ?>
     <?php if($totalRowCount > $showLimit){ ?>
         
-        <div class="btn btn-outline-dark" id="show_more_main<?php echo $postID; ?>">
+        <div  id="show_more_main<?php echo $postID; ?>">
             <span id="<?php echo $postID; ?>" class="show_more" title="Load more posts">+ more</span>
             <span class="loding" style="display: none;"><span class="loding_txt">Loading...</span></span>
         </div>

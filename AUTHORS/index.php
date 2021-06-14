@@ -45,10 +45,12 @@
 <div class="text-centre">
 
 <p> Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+<p><a href="../BLOG/index.php" class="btn btn-outline-dark" >view blog</a></p>
 <p> <a class="btn btn-outline-dark" href="index.php?logout='1'" style="color: red;">logout</a> </p>
 
 <a href="create.php" class="btn btn-outline-dark">+ create a new post</a>
 <a href="index.php" class="btn btn-outline-dark">POSTS</a>
+<a href="myprofile.php" class="btn btn-outline-dark">profile</a>
 
 
 
@@ -78,8 +80,8 @@
 <?php
 
 include "servers.php"; // Using database connection file here
-
-$records = mysqli_query($db, "select * from images ORDER BY id  "); // fetch data from database
+$username =   $_SESSION['username']; 
+$records = mysqli_query($db, "select * from images WHERE `author`='$username' ORDER BY id  "); // fetch data from database
 
 while($data = mysqli_fetch_array($records))
 {
