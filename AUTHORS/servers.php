@@ -1,8 +1,7 @@
 <?php
   // Create database connection
   
-  
-  $db = mysqli_connect("localhost", "root", "", "mjanjamedia");
+  require('dbcon.php');
 
   // Initialize message variable
   $msg = "";
