@@ -1,7 +1,7 @@
 <?php
   // Create database connection
   
-  include_once "dbcon.php";
+  include_once "assets/dbcon.php";
 
   // Initialize message variable
   $msg = "";

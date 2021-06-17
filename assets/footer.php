@@ -31,11 +31,11 @@ while($data = mysqli_fetch_array($records))
  </div>
  
  <div class="tags">
-    <a href="../BLOG/politics.php">politics</a>
+    <a href="politics.php">politics</a>
     <hr>
-    <a href="../BLOG/entertainment.php">Entertainment News</a>
+    <a href="entertainment.php">Entertainment News</a>
     <hr>
-    <a href="../BLOG/aboutus.php">About Us</a>
+    <a href="aboutus.php">About Us</a>
     <hr>
  </div>
 <div class="tags">

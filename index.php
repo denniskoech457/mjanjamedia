@@ -22,7 +22,7 @@ $(document).ready(function(){
         $('.loding').show();
         $.ajax({
             type:'POST',
-            url:'politics_more.php',
+            url:'show_more.php',
             data:'id='+ID,
             success:function(html){
                 $('#show_more_main'+ID).remove();
@@ -47,7 +47,7 @@ $(document).ready(function(){
    
       
 
- <div style="max-width: 80% ; min-width: 80% ;"  class="posts" >
+ <div style="margin:auto; max-width: 80% ; min-width: 80% ;"  class="posts" >
  <h1>Latest Post</h1>
   <div style="display: flex;
         flex-direction:row;  flex-wrap: wrap; "   class="postList">
@@ -64,8 +64,8 @@ $(document).ready(function(){
     ?>
    
    <a href="readmore.php?id=<?php echo $row['id']; ?>">  
-    <div class="card" style="width: 18rem; margin:7px; color: black; ">
-     <img  class="card-img-top" src="<?php echo " ../images/".$row['image']." "; ?>" alt="Card image cap">
+    <div class="card" style="width: 14rem; margin:7px; color: black; ">
+     <img  class="card-img-top" src="<?php echo " images/".$row['image']." "; ?>" alt="<?php echo $row['title']; ?>">
 
      <div class="card-body">
       <h2 class="title"  ><u><?php echo $row['title']; ?></u></h2>
@@ -90,9 +90,9 @@ $(document).ready(function(){
 
 
 
-   <div class="advert">
+   <div  class="advert">
      <p>ADVERTISE HERE!!</p>
-
+     <img style="" src="" alt="">
 
 
      

@@ -63,20 +63,33 @@
     max-height: 13cm;
     background-color: silver;
     padding: 5px;
-    float: left;
-    
+    width: 100%;
+    margin: auto;
     
 }
+
 .contentss{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 100%;
-    margin: 10px;
+    margin: auto;
     margin-top: 90px;
-    
+    width: 100%;
     
 }
 .container{
     margin-top: 80px;
+}
+@media (max-width: 815px){
+    .advert{
+    
+        
+        max-height: 13cm;
+        background-color: silver;
+        padding: 5px;
+        width: 100%;
+        margin: auto;
+        
+    }
 }

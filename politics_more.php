@@ -15,7 +15,7 @@ if(!empty($_POST["id"])){
     $row = $query->fetch_assoc();
     $totalRowCount = $row['num_rows'];
     
-    $showLimit = 11;
+    $showLimit = 4;
     
     // Get records from the database
     $query = $db->query("SELECT * FROM images WHERE id < ".$_POST['id']." ORDER BY id DESC LIMIT $showLimit");
@@ -26,11 +26,12 @@ if(!empty($_POST["id"])){
     ?>
 <a href="readmore.php?id=<?php echo $row['id']; ?>">
 <div class="card" style="width: 18rem; margin:7px;">
-   <img class="card-img-top" src="<?php echo " ../images/".$row['image']." "; ?>" alt="<?php echo $row['title']; ?>">
-
+   <img class="card-img-top" src="<?php echo " images/".$row['image']." "; ?>" alt="<?php echo $row['title']; ?>">
+   <p class="bg"><i class="fas fa-tags"></i> <u><?php echo $row['categoryname']; ?></u></p>
+   <p class="bg"><i class="fas fa-calendar-alt"></i><u><?php echo substr($row['time'],0,10); ?></u></p> 
   <div class="card-body">
     <h2  class="title"><u><?php echo $row['title']; ?></u></h2>
-    <p class="bg"><i class="fas fa-calendar-alt"></i><u><?php echo substr($row['time'],0,10); ?></u></p> 
+    
     
   </div>
 </div>
@@ -39,7 +40,7 @@ if(!empty($_POST["id"])){
     <?php } ?>
     <?php if($totalRowCount > $showLimit){ ?>
         
-        <div  id="show_more_main<?php echo $postID; ?>">
+        <div id="show_more_main<?php echo $postID; ?>">
             <span id="<?php echo $postID; ?>" class="show_more" title="Load more posts">+ more</span>
             <span class="loding" style="display: none;"><span class="loding_txt">Loading...</span></span>
         </div>

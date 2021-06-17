@@ -27,7 +27,7 @@ $del = mysqli_query($db,"delete from author where id = '$id'"); // delete query
 if($del)
 {
     mysqli_close($db); // Close connection
-    header("location:authors.php"); // redirects to all records page
+    header("location:../authors.php"); // redirects to all records page
     exit;	
 }
 else

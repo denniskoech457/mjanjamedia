@@ -38,11 +38,11 @@ while($data = mysqli_fetch_array($records))
             <div class="open"></div>
             <div class="navigation">
                 <div class="navigation-items">
-                    <a href="../BLOG/index.php">Home</a>
-                      <a href="../BLOG/politics.php">politics</a>
-                      <a href="../BLOG/entertainment.php">Entertainment news</a>
+                    <a href="index.php">Home</a>
+                      <a href="politics.php">politics</a>
+                      <a href="entertainment.php">Entertainment news</a>
                   <a href="#">NewsLetter</a>
-                    <a href="../BLOG/aboutus.php">Contact</a>
+                    <a href="aboutus.php">Contact</a>
                 </div>
          </div>    
     </header>

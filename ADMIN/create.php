@@ -6,14 +6,14 @@
 <?php 
   session_start(); 
 
-  if (!isset($_SESSION['username'])) {
+  if (!isset($_SESSION['user'])) {
   	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
+  	header('location: loginadmin.php');
   }
   if (isset($_GET['logout'])) {
   	session_destroy();
-  	unset($_SESSION['username']);
-  	header("location: login.php");
+  	unset($_SESSION['user']);
+  	header("location: loginadmin.php");
   }
 ?>
 
@@ -26,7 +26,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" 
         crossorigin="anonymous">
         <link rel="stylesheet" href="assets/mjanja.css">
-    <title><?php echo $_SESSION['username']; ?>| create post </title>
+    <title><?php echo $_SESSION['user']; ?>| create post </title>
 </head>
 <?php
    
@@ -36,7 +36,7 @@
 
 
 
-<p> Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+<p> Welcome <strong><?php echo $_SESSION['user']; ?></strong></p>
 <p> <a class="btn btn-outline-dark" href="index.php?logout='1'" style="color: red;">logout</a> </p>
             
         
@@ -95,8 +95,8 @@
     </div>
     <input type="hidden" name="author" value="<?php 
        
-      if (isset($_SESSION['username'])) 
-      echo $_SESSION['username'];
+      if (isset($_SESSION['user'])) 
+      echo $_SESSION['user'];
             ?>" readonly>
   	
   	<div>

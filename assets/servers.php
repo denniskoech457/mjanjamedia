@@ -1,6 +1,6 @@
 <?php
   // Create database connection
-  require('../BLOG/dbcon.php');
+  require('dbcon.php');
 
   // Initialize message variable
   $msg = "";

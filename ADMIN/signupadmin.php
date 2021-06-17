@@ -35,9 +35,7 @@
   	  <button type="submit" class="btn btn-dark" name="reg_user">Create account</button>
   	
 </div>
-  	<p class="account">
-  		Already have an account? <a href="login.php">log in</a>
-  	</p>
+  	
   </form>
 </body>
 </html>

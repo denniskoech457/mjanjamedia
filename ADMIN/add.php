@@ -1,7 +1,23 @@
+<?php 
+  session_start(); 
 
+  if (!isset($_SESSION['user'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: loginadmin.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['user']);
+  	header("location: loginadmin.php");
+  }
+?>
 <?php include('regserver.php') ?>
 <!DOCTYPE html>
 <html>
+
+<?php include('assets/header2.php') ?>
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,31 +28,38 @@
 
   <link rel="stylesheet" type="text/css" href="assets/login.css">
 </head>
-<body>
+	<p> Welcome back admin <strong><?php echo $_SESSION['user']; ?></strong></p>
+    <p> <a class="btn btn-outline-dark" href="index.php?logout='1'" style="color: red;">logout</a> </p>
+                
+    <a href="add.php" class="btn btn-outline-dark">+ add author</a>
+    <a href="index.php" class="btn btn-outline-dark">POSTS</a>
+    <a class="btn btn-dark" href="authors.php">AUTHORS</a>
+    <a class="btn btn-dark" href="editweb.php?id=1">Website information</a>
 
   <form method="post" action="add.php" class="container" >
   	<?php  include('errors.php'); ?>
-<div class="register">
+		<div class="register">
 
-      <h1>Sign up</h1><br>
-  	
-  	  <label ><b>Username</b></label><br>
-  	  <input placeholder="enter username" type="text" name="username" value="<?php echo $username; ?>"><br>
-  	
-  	
-  	  <label><b >Email</b></label><br>
-  	  <input placeholder="Enter email" type="email" name="email" value="<?php echo $email; ?>"><br>
-  	
-  	  <label><b>Password</b></label><br>
-  	  <input placeholder="Enter Password" type="password" name="password_1"><br>
-  	
-  	  <label><b>Confirm password</b></label><br>
-  	  <input placeholder="Enter Password" type="password" name="password_2"><br><br>
-  	
-  	  <button type="submit" class="btn btn-dark" name="reg_user">ADD AUTHOR</button>
-  	
-</div>
+			<h1>Sign up</h1><br>
+			
+			<label ><b>Username</b></label><br>
+			<input placeholder="enter username" type="text" name="username" value="<?php echo $username; ?>"><br>
+			
+			
+			<label><b >Email</b></label><br>
+			<input placeholder="Enter email" type="email" name="email" value="<?php echo $email; ?>"><br>
+			
+			<label><b>Password</b></label><br>
+			<input placeholder="Enter Password" type="password" name="password_1"><br>
+			
+			<label><b>Confirm password</b></label><br>
+			<input placeholder="Enter Password" type="password" name="password_2"><br><br>
+			
+			<button type="submit" class="btn btn-dark" name="reg_user">ADD AUTHOR</button>
+			
+		</div>
   	
   </form>
-</body>
-</html>
+<?php 
+include('assets/footer.php') 
+?>

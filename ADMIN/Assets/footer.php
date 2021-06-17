@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/footer.css">
     
 </head>
-<body>
+
     
 
 <footer>
@@ -35,7 +35,7 @@ while($data = mysqli_fetch_array($records))
     <hr>
     <a href="">Entertainment News</a>
     <hr>
-    <a href="http://localhost/mjanjamedia/test/aboutus.php">About Us</a>
+    <a href="../aboutus.php">About Us</a>
     <hr>
  </div>
 <div class="tags">
